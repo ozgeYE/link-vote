@@ -62,15 +62,13 @@ const linkReducer = (state = is, action) => {
             return Object.assign({}, state, {links: splicedLink});
 
         case SORT_LINK_ASC:
-            localStorage.setItem('sort', 'asc');
-            const asc = JSON.parse(localStorage.getItem('links'));
-            const sortASC = asc.links.sort((a, b) => (a.point > b.point) ? 1 : ((b.point > a.point) ? -1 : 0));
+            sessionStorage.setItem('sort', 'asc');
+            const sortASC = state.links.sort((a, b) => (a.point > b.point) ? -1 : ((b.point > a.point) ? 1 : 0));
             return Object.assign({}, state, {links: sortASC});
 
         case SORT_LINK_DESC:
-            localStorage.setItem('sort', 'desc');
-            const desc = JSON.parse(localStorage.getItem('links'));
-            const sortDESC = desc.links.sort((a, b) => (a.point > b.point) ? -1 : ((b.point > a.point) ? 1 : 0));
+            sessionStorage.setItem('sort', 'desc');
+            const sortDESC = state.links.sort((a, b) => (a.point > b.point) ? 1 : ((b.point > a.point) ? -1 : 0));
             return Object.assign({}, state, {links: sortDESC});
         default:
             return state;

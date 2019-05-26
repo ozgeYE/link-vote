@@ -25,6 +25,10 @@
       border: 1px solid #9c8d8d;
       margin: 5px;
 
+      :hover {
+        background-color: #e6e3e3;
+      }
+
       .point-value {
         font-size: 35px;
         font-weight: bold;

@@ -26,16 +26,19 @@ class AddLinkForm extends React.Component {
 
     submitLink = (e) => {
         e.preventDefault();
-        const link = {
-            id: new Date().getTime(),
-            name: this.state.name,
-            url: this.state.url,
-            point: 0
-        };
+        if(this.state.name && this.state.url) {
+            const link = {
+                id: new Date().getTime(),
+                name: this.state.name,
+                url: this.state.url,
+                point: 0
+            };
 
-        this.props.addLink(link);
-        this.props.showAlert(link, "add");
-        setTimeout(() => this.props.hideAlert(), 1000);
+            this.props.addLink(link);
+            this.props.showAlert(link, "add");
+            setTimeout(() => this.props.hideAlert(), 1000);
+        }
+
     };
 
     goLinkList = () => {
@@ -61,7 +64,7 @@ class AddLinkForm extends React.Component {
                         <Form.Control type="text" placeholder="Enter url"
                                       onChange={(e) => this.onChangesHandler(e)}/>
                     </Form.Group>
-                    <Button variant="primary" type="submit" onClick={(e) => this.submitLink(e)}>
+                    <Button variant="primary" disabled={(!this.state.name || !this.state.url)} type="submit" onClick={(e) => this.submitLink(e)}>
                         Add Link
                     </Button>
                 </Form>

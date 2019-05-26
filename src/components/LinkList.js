@@ -34,9 +34,11 @@ class LinkList extends React.Component {
                     <Dropdown.Item eventKey="1" onClick={() => this.props.sortAsc()}>Most Voted (Z->A)</Dropdown.Item>
                     <Dropdown.Item eventKey="2" onClick={() => this.props.sortDesc()}>Less Voted (A->Z)</Dropdown.Item>
                 </DropdownButton>
-                {linkList}
+                <div className="list">
+                    {linkList}
+                </div>
                 <div className="col-sm-8 pagination">
-                    <PaginationPage/>
+                    {/*<PaginationPage/>*/}
                 </div>
 
                 <RemoveLinkDialog/>
