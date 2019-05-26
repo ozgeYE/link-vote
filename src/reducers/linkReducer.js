@@ -12,21 +12,16 @@ const initialState = {
     links: [
         {id: 1, name: 'amazon', url: 'http://amazon.com', point: 2},
         {id: 2, name: 'google', url: 'http://google.com', point: 3},
-        {id: 3, name: 'huawei 1', url: 'http://huawei.com', point: 5},
-        {id: 4, name: 'huawei2', url: 'http://huawei.com', point: 6},
-        {id: 5, name: 'huawei3', url: 'http://huawei.com', point: 1},
-        {id: 6, name: 'huawei4', url: 'http://huawei.com', point: 8},
-        {id: 7, name: 'huawei5', url: 'http://huawei.com', point: 5},
-        {id: 8, name: 'huawei6', url: 'http://huawei.com', point: 7},
-        {id: 9, name: 'huawei7', url: 'http://huawei.com', point: 9},
+        {id: 3, name: 'instagram', url: 'http://instargam.com', point: 5},
+        {id: 4, name: 'facebook', url: 'http://facobook.com', point: 6},
+        {id: 5, name: 'iphone', url: 'http://iphone.com', point: 1},
+        {id: 6, name: 'samsung', url: 'http://samsung.com', point: 8},
     ]
 };
 
 localStorage.setItem('links', JSON.stringify(initialState));
-localStorage.setItem('page', JSON.stringify(1));
 
 const is = JSON.parse(localStorage.getItem('links'));
-console.log(is);
 
 
 const linkReducer = (state = is, action) => {
@@ -36,7 +31,6 @@ const linkReducer = (state = is, action) => {
             return Object.assign({}, state, {links: links});
         case DELETE_LINK:
             const filteredLinks = state.links.filter(l => l.id !== action.linkId);
-            console.log('d', filteredLinks);
             return Object.assign({}, state, {links: filteredLinks});
         case UP_VOTE:
             const upVoteLink = state.links.map(l => {

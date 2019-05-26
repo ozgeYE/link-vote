@@ -8,7 +8,11 @@ import {
     addLink,
     upVote,
     getLinks,
-    downVote
+    downVote,
+    sortLinksAsc,
+    sortLinksDesc,
+    SORT_LINK_DESC,
+    SORT_LINK_ASC
 } from './linkAction'
 
 describe('link actions', () => {
@@ -60,5 +64,19 @@ describe('link actions', () => {
             linkId
         };
         expect(downVote(linkId)).toEqual(expectedAction)
+    });
+
+    it('should sort link', () => {
+        const expectedAction = {
+            type: SORT_LINK_ASC
+        };
+        expect(sortLinksAsc()).toEqual(expectedAction)
+    });
+
+    it('should sort link', () => {
+        const expectedAction = {
+            type: SORT_LINK_DESC
+        };
+        expect(sortLinksDesc()).toEqual(expectedAction)
     });
 });

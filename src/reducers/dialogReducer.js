@@ -9,9 +9,7 @@ const initialState = {
 const dialogReducer = (state = initialState, action) => {
     switch (action.type) {
         case SHOW_DELETE_DIALOG:
-            console.log(action);
             return Object.assign({}, state, {showDeleteDialog: true, link: action.link});
-        // return state;
         case HIDE_DELETE_DIALOG:
             return Object.assign({}, state, {showDeleteDialog: false, link: null});
         case SHOW_ALERT:
