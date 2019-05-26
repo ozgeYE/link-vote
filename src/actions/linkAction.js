@@ -41,14 +41,14 @@ export const downVote = (linkId) => {
     }
 };
 
-export default sortLinksAsc = () => {
+export const sortLinksAsc = () => {
     return {
         type: SORT_LINK_ASC
     }
-}
+};
 
-export default sortLinksDesc = () => {
+export const sortLinksDesc = () => {
     return {
         type: SORT_LINK_DESC,
     }
-}
+};
