@@ -1,0 +1,32 @@
+.add-link-container {
+  height: 100px;
+  margin: 0 auto;
+  background-color: #e6e3e38c;
+
+  .box {
+    height: 80px;
+    width: 80px;
+    line-height: 70px;
+    text-align: center;
+    display: inline-block;
+    background-color: #e6e3e3;
+    border-radius: 7px;
+    border: 1px solid #9c8d8d;
+    margin-top: 10px;
+
+    .sum {
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
+  .text {
+    height: 80px;
+    line-height: 70px;
+    text-align: center;
+    display: inline-block;
+    font-size: 26px;
+    padding: 0 10%;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

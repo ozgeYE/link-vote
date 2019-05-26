@@ -1,0 +1,55 @@
+.item-container {
+  height: 100px;
+  margin: 0 auto;
+
+  :hover {
+    background-color: #b3b3b3;
+  }
+
+  .delete {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .link-row {
+    height: 100%;
+
+    .point {
+      height: 80px;
+      width: 80px;
+      text-align: center;
+      background-color: #e6e3e3;
+      border-radius: 7px;
+      border: 1px solid #9c8d8d;
+      margin: 5px;
+
+      .point-value {
+        font-size: 35px;
+        font-weight: bold;
+      }
+
+      .point-text {
+        margin-top: -10px;
+      }
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .url {
+      font-size: 14px;
+      color: #534949;
+    }
+
+    .buttons {
+      button {
+        color: #3c4249;
+        padding-left: 0;
+      }
+    }
+  }
+}
