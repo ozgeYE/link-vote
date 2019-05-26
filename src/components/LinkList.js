@@ -57,7 +57,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         sortAsc: () => dispatch(sortLinksAsc()),
         sortDesc: () => dispatch(sortLinksDesc()),
-        getLinks: (page) => dispatch(getLinks(page))
+        getLinks: (page, sortType) => dispatch(getLinks(page, sortType))
     }
 };
 
