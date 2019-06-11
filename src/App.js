@@ -7,14 +7,13 @@ import AddLinkForm from "./components/AddLinkForm";
 import './App.scss';
 
 
-class App extends React.Component {
+export class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
                 <Container>
                     <div className="header">
                         <div className="firm-name">
-                            <span className="hepsi">Hepsiburada</span>
                             <span className="com">.com</span>
                         </div>
                         <div className="vote">

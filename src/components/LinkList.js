@@ -9,7 +9,7 @@ import {Dropdown, DropdownButton} from 'react-bootstrap';
 import {sortLinksAsc, sortLinksDesc, getLinks} from "../actions/linkAction";
 import './LinkList.scss';
 
-class LinkList extends React.Component {
+export class LinkList extends React.Component {
     render() {
         const data = this.props.links;
         console.log(data.links);
@@ -31,8 +31,8 @@ class LinkList extends React.Component {
                     id="sort"
                     key="secondary"
                 >
-                    <Dropdown.Item eventKey="1" onClick={() => this.props.sortAsc()}>Most Voted (Z->A)</Dropdown.Item>
-                    <Dropdown.Item eventKey="2" onClick={() => this.props.sortDesc()}>Less Voted (A->Z)</Dropdown.Item>
+                    <Dropdown.Item id="asc" eventKey="1" onClick={() => this.props.sortAsc()}>Most Voted (Z->A)</Dropdown.Item>
+                    <Dropdown.Item id="desc" eventKey="2" onClick={() => this.props.sortDesc()}>Less Voted (A->Z)</Dropdown.Item>
                 </DropdownButton>
                 <div className="list">
                     {linkList}

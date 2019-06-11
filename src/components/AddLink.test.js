@@ -19,6 +19,20 @@ function setup() {
 }
 
 describe('components', () => {
+    const initialState= {
+        links: [
+            {id:1, name: 'name', url: 'url', point: 0}
+        ]
+    };
+    const mockStore= configureStore();
+    let store, wrapper;
+
+    beforeEach(()=>{
+        store = mockStore(initialState);
+        wrapper = mount( <Provider store={store}><ConnectedHome /></Provider> )
+    });
+
+
     describe('Add Link', () => {
         it('should render self and subcomponents', () => {
             const { enzymeWrapper } = setup();
